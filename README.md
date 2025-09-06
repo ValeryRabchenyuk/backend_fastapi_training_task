@@ -17,6 +17,7 @@ uvicorn main:app --reload --host 127.0.0.1 --port 8080
 
 ### The service will be available at:
 👉 http://127.0.0.1:8080
+
 ---
 
 ### Endpoints
@@ -66,6 +67,7 @@ Example response:
   "title": "delectus aut autem",
   "completed": false
 }
+
 ---
 
 ### Interactive Docs
