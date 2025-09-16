@@ -68,5 +68,4 @@ Example response:
 
 ### Interactive Docs
 
-Swagger UI is available at:
-http://127.0.0.1:8080/docs
+Docs available at: http://127.0.0.1:8080/docs

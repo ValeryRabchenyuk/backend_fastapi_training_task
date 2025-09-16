@@ -20,15 +20,14 @@ def create_short_url(url: schemas.URLCreate, db: Session = Depends(get_db)):
     return crud.create_url(db, url)
 
 
+@app.get("/async")
+async def async_request():
+    return await utils.fetch_json()
+
+
 @app.get("/{short_id}")
 def redirect_url(short_id: str, db: Session = Depends(get_db)):
     db_url = crud.get_url(db, short_id)
     if not db_url:
         raise HTTPException(status_code=404, detail="URL not found")
     return RedirectResponse(db_url.original_url, status_code=307)
-
-
-@app.get("/async")
-async def async_request():
-    """Асинхронный запрос к внешнему API."""
-    return await utils.fetch_json()
